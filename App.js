@@ -77,6 +77,8 @@ Ext.define('CustomApp', {
     _startApp: function(app) {
 
         app.iterStore = Ext.create('Rally.data.wsapi.Store', {
+            // Barry : added limit
+            limit : 'Infinity',
             model: 'Iteration',
             autoLoad: 'true',
             filters: [
@@ -130,6 +132,8 @@ Ext.define('CustomApp', {
         usStore = Ext.create('Rally.data.wsapi.Store', {
             model: 'User Story',
 //            filters: Rally.data.wsapi.Filter.or(oredFilters),
+            // Barry : added limit
+            limit : 'Infinity',
             autoLoad: 'true',
             listeners: {
                 load: function(store, data, success) {

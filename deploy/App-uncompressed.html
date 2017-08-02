@@ -3,7 +3,7 @@
 <head>
     <title>TeamVelocity</title>
 
-    <script type="text/javascript" src="/apps/2.0/sdk-debug.js"></script>
+    <script type="text/javascript" src="/apps/2.0/sdk.js"></script>
 
     <script type="text/javascript">
         Rally.onReady(function () {
@@ -86,6 +86,8 @@ Ext.define('CustomApp', {
     _startApp: function(app) {
 
         app.iterStore = Ext.create('Rally.data.wsapi.Store', {
+            // Barry : added limit
+            limit : 'Infinity',
             model: 'Iteration',
             autoLoad: 'true',
             filters: [
@@ -139,6 +141,8 @@ Ext.define('CustomApp', {
         usStore = Ext.create('Rally.data.wsapi.Store', {
             model: 'User Story',
 //            filters: Rally.data.wsapi.Filter.or(oredFilters),
+            // Barry : added limit
+            limit : 'Infinity',
             autoLoad: 'true',
             listeners: {
                 load: function(store, data, success) {
@@ -204,7 +208,7 @@ Ext.define('CustomApp', {
                         '#f9a814',
                         '#ee6c19',
                         '#105cab',
-                        '107c1e',
+                        '#107c1e',
                         '#df1a7b',
                         '#4a1d7e'
                     ];
@@ -360,14 +364,12 @@ Ext.define('CustomApp', {
     </script>
 
 
-
     <style type="text/css">
         .app {
-  /* Add app styles here */
+     /* Add app styles here */
 }
 
     </style>
 </head>
-<body>
-</body>
+<body></body>
 </html>
